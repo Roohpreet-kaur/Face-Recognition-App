@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+    <title>FreeAI</title>
+</head>
+<body>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+
+                <img id="img" src="{{url_for('static',filename='images/img2.jpg')}}" alt="" width="150" height="30">
+
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link" href="{{ url_for('index') }}"><span class="size">Home</span> <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{{ url_for('faceapp') }}"><span class="size">FaceApp</span></a>
+                
+                
+              </div>
+            </div>
+          </nav>
+    </div>
+
+    {% block bodyblock %}
+
+        
+
+   
+
+
+<br> {% endblock %}
+<br>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+            <img id="img2" src="{{ url_for('static', filename='images/img3.jpg') }}" alt="" width="200" height="40"><span id="sp">FaceRecognitionApp</span>
+            <p align="center">
+                <span style="color:white","font-size:20px">
+                    Thankyou for visiting FaceRecognitionApp!
+                </span>
+                </p>
+        </div>
+    </footer>
+    
+<style>
+#sp{
+    color:white;
+    font-size:90px;
+    padding:50px;
+}
+#img2{
+    height:120px;
+    width:120px;
+    margin-top:50;
+    margin-bottom:10;
+}
+    .footer{
+        position:fixed;
+        left:0;
+       
+        bottom:0;
+        width: 100%;
+        background-color: #002f4d;
+        padding-top:-20px;
+        padding-left:0px;
+        padding-bottom: 0px;
+    }
+    .navbar{
+        min-height: 80px;
+    }
+    .navbar-nav{
+        padding:30px;
+    }
+    .navbar-brand{
+        padding:0.15px;
+        height:80px;
+        line-height:80px;
+    }
+    .navbar-toggler{
+        margin-top:23px;
+        padding: 9px 10px !important;
+    }
+    #img{
+        width:120px;
+        height:80px;
+    }
+    .size{
+        font-size:30px;
+    }
+
+</style>
+
+<!-- color codes -->
+<!-- dark blue #002f4d -->
+<!-- light blue #198b90 -->
+</body>
+</html>
+

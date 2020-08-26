@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block bodyblock %}
+<br>
+    <div class="container">
+    <h2><b>Gender Classification</b></h2>
+    </div>
+
+    <div class="container">
+        <br><br>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <label for="upload">Upload to predict</label>
+            <input type="file" id="upload" name="image" required="true">
+            <input type="submit" value="upload & predict">
+        </form>
+
+    </div>
+
+    {% if fileupload  %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" id="predict">
+                <img src="{{ url_for('static',filename='uploads/')}}{{ img_name }}" alt="" width="{{ w }}" height="300">
+            </div>
+            <div class="col-md-6" id="predict">
+                <img src="{{ url_for('static',filename='predict/')}}{{ img_name }}" alt="" width="{{ w }}" height="300">
+            </div>
+        </div>
+    </div>
+<br>
+
+    <!-- footer -->
+    {% block footerblock %}
+    
+    <footer class="footer">
+        <div class="container">
+            <img id="img2" src="{{ url_for('static', filename='images/img3.jpg') }}" alt="" width="200" height="40"><span id="sp">FaceRecognitionApp</span>
+            <p align="center">
+                <span style="color:white","font-size:20px">
+                    Thankyou for visiting FaceRecognitionApp!
+                </span>
+                </p>
+        </div>
+    </footer>
+    {% endblock  %}
+    <style>
+        #predict{
+            border: solid;
+            color:#002f4d;
+            text-align: center;
+        }
+        .footer{
+            left:0;
+        top:50%%;
+        height:5%;
+        bottom:0;
+        width: 100%;
+        background-color: #002f4d;
+        padding-top: 40px;
+        padding-bottom: 20px;
+        }
+    </style>
+
+
+    {% endif %}
+
+{% endblock %}
